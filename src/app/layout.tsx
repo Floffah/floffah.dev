@@ -11,14 +11,10 @@ export const metadata = populateMetadata({
 
 const nunito = Nunito({ subsets: ["latin"] });
 
-const BaseLayout = forwardRef<HTMLHtmlElement, PropsWithChildren>(
-    ({ children }, ref) => {
-        return (
-            <html lang="en" ref={ref}>
-                <body className={nunito.className}>{children}</body>
-            </html>
-        );
-    },
-);
-
-export default BaseLayout;
+export default function RootLayout({ children }: PropsWithChildren) {
+    return (
+        <html lang="en">
+            <body className={nunito.className}>{children}</body>
+        </html>
+    );
+}

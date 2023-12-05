@@ -35,7 +35,7 @@ export const Header = forwardRef<HTMLDivElement>((props, ref) => {
                         </div>
                     </div>
 
-                    <div className="mt-5 flex items-center gap-4 text-blue-300/90">
+                    <div className="mt-5 flex items-center gap-4 text-blue-100/90">
                         <Link href="https://github.com/floffah">
                             <Icon
                                 label="github icon"
