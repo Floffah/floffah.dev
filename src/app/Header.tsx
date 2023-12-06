@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { forwardRef } from "react";
 
+import { Emoji } from "@/app/components/Emoji";
 import { Icon } from "@/app/components/Icon";
 
 export const Header = forwardRef<HTMLDivElement>((props, ref) => {
@@ -19,17 +20,18 @@ export const Header = forwardRef<HTMLDivElement>((props, ref) => {
                             src={floffahImage}
                             alt="floffah"
                             className="h-28 w-28 rounded-xl"
+                            placeholder="blur"
                         />
                         <div>
                             <h1 className="text-6xl font-bold text-blue-100">
                                 Floffah
                             </h1>
-                            <p className=" gap-1 text-lg text-blue-100/90">
+                            <p className="gap-1 text-lg text-blue-100/90">
                                 Web developer & software engineer from Scotland{" "}
-                                <img
-                                    src="https://abs.twimg.com/emoji/v2/svg/1f3f4-e0067-e0062-e0073-e0063-e0074-e007f.svg"
-                                    className="inline-block h-5 w-5"
+                                <Emoji
+                                    emoji="🏴󠁧󠁢󠁳󠁣󠁴󠁿"
                                     alt="scotland flag"
+                                    className="-mt-1 inline-block h-5 w-5"
                                 />
                             </p>
                         </div>

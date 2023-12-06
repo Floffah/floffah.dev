@@ -16,6 +16,16 @@ const nextConfig = {
         serverComponentsExternalPackages: ["mongoose"], // <-- and this
     },
     pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "cdn.jsdelivr.net",
+                port: '',
+                pathname: '/npm/twemoji@latest/2/svg/**'
+            }
+        ],
+    }
 };
 
 export default withMDX(nextConfig);

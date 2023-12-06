@@ -13,7 +13,8 @@ export function Navbar({ standalone = true, hideTitle = false }: NavbarProps) {
             className={clsx(
                 "fixed left-0 top-0 flex w-screen items-center justify-between px-3 transition-[padding,background-color] duration-150",
                 {
-                    "py-4": !standalone,
+                    "py-4": !standalone && !hideTitle,
+                    "py-2": !standalone && hideTitle,
                     "bg-black/20 py-2": standalone,
                 },
             )}
