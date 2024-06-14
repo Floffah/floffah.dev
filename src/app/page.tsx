@@ -4,8 +4,8 @@ import Link from "next/link";
 import { ReactNode, useEffect, useRef, useState } from "react";
 
 import { Header } from "@/app/Header";
-import { Emoji } from "@/app/components/Emoji";
-import { Navbar } from "@/app/components/Navbar";
+import { Emoji } from "@/components/Emoji";
+import { Navbar } from "@/components/Navbar";
 
 const ProjectCard = ({
     title,

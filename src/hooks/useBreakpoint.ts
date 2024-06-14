@@ -1,4 +1,4 @@
-import baseTailwindConfig from "../../../tailwind.config.js";
+import baseTailwindConfig from "../../tailwind.config.js";
 import { useEffect, useState } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
 
@@ -16,6 +16,9 @@ export enum Breakpoint {
     "2XL",
 }
 
+/**
+ * @deprecated Use Tailwind breakpoints & CSS
+ */
 export function useBreakpoint() {
     const [breakpoint, setBreakpoint] = useState<Breakpoint>(Breakpoint.MD);
 

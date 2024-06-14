@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Image, { ImageProps } from "next/image";
 import { forwardRef } from "react";
 
-import { toCodePoints } from "@/app/lib/toCodePoint";
+import { toCodePoints } from "@/lib/toCodePoint";
 
 export const Emoji = forwardRef<
     HTMLImageElement,

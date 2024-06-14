@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { forwardRef } from "react";
 
-import { Emoji } from "@/app/components/Emoji";
-import { Icon } from "@/app/components/Icon";
+import { Emoji } from "@/components/Emoji";
+import { Icon } from "@/components/Icon";
 
 export const Header = forwardRef<HTMLDivElement>((props, ref) => {
     return (
