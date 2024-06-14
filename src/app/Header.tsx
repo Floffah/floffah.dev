@@ -3,6 +3,11 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { forwardRef } from "react";
+import DiscordIcon from "~icons/ic/baseline-discord";
+import DownArrowIcon from "~icons/ic/round-keyboard-arrow-down";
+import GithubIcon from "~icons/mdi/github";
+import PostOutlineIcon from "~icons/mdi/post-outline";
+import TwitterIcon from "~icons/mdi/twitter";
 
 import { Emoji } from "@/components/Emoji";
 import { Icon } from "@/components/Icon";
@@ -40,29 +45,29 @@ export const Header = forwardRef<HTMLDivElement>((props, ref) => {
                     <div className="mt-5 flex items-center gap-4 text-blue-100/90">
                         <Link href="https://github.com/floffah">
                             <Icon
-                                label="github icon"
-                                icon="mdi:github"
+                                icon={GithubIcon}
+                                label="github"
                                 className="h-10 w-10 transition-all duration-150 hover:scale-110"
                             />
                         </Link>
                         <Link href="https://discord.gg/DsSeGSc5na">
                             <Icon
-                                label="discord icon"
-                                icon="ic:baseline-discord"
+                                icon={DiscordIcon}
+                                label="discord"
                                 className="h-10 w-10 transition-all duration-150 hover:scale-110"
                             />
                         </Link>
                         <Link href="https://blog.floffah.dev">
                             <Icon
-                                label="blog icon"
-                                icon="mdi:post-outline"
+                                icon={PostOutlineIcon}
+                                label="blog"
                                 className="h-10 w-10 transition-all duration-150 hover:scale-110"
                             />
                         </Link>
                         <Link href="https://twitter.com/floffah">
                             <Icon
-                                label="blog icon"
-                                icon="mdi:twitter"
+                                icon={TwitterIcon}
+                                label="twitter"
                                 className="h-10 w-10 transition-all duration-150 hover:scale-110"
                             />
                         </Link>
@@ -71,8 +76,8 @@ export const Header = forwardRef<HTMLDivElement>((props, ref) => {
             </div>
 
             <Icon
+                icon={DownArrowIcon}
                 label="down icon"
-                icon="ic:round-keyboard-arrow-down"
                 className="h-10 w-10 animate-bounce cursor-pointer self-center justify-self-end"
                 onClick={() =>
                     window.scrollTo({

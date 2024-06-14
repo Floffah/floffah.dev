@@ -1,11 +1,10 @@
+import createMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
-import createMDX from "@next/mdx"
+import Icons from "unplugin-icons/webpack";
 
 const withMDX = createMDX({
     options: {
-        remarkPlugins: [
-            remarkGfm,
-        ]
+        remarkPlugins: [remarkGfm],
     },
 });
 
@@ -21,11 +20,21 @@ const nextConfig = {
             {
                 protocol: "https",
                 hostname: "cdn.jsdelivr.net",
-                port: '',
-                pathname: '/npm/twemoji@latest/2/svg/**'
-            }
+                port: "",
+                pathname: "/npm/twemoji@latest/2/svg/**",
+            },
         ],
-    }
+    },
+    webpack(config) {
+        config.plugins.push(
+            Icons({
+                compiler: "jsx",
+                jsx: "react",
+            }),
+        );
+
+        return config;
+    },
 };
 
 export default withMDX(nextConfig);

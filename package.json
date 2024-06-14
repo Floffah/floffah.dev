@@ -38,10 +38,13 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@iconify/json": "^2.2.219",
     "@mdx-js/loader": "^3.0.1",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/mdx": "^2.0.13",
     "@types/bun": "^1.1.4",
+    "@types/mdx": "^2.0.13",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.19",
@@ -51,6 +54,7 @@
     "postcss-import": "^16.1.0",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.4",
+    "unplugin-icons": "^0.19.0",
     "vercel": "^34.2.7"
   },
   "packageManager": "bun@1.1.13"

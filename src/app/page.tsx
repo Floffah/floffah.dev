@@ -20,7 +20,7 @@ const ProjectCard = ({
         <Link
             href={link}
             target="_blank"
-            className="flex flex-[0_0_33%]  flex-col items-center gap-1 rounded-lg border border-white/10 px-3 py-2"
+            className="flex flex-[0_0_33%] flex-col items-center gap-1 rounded-lg border border-white/10 px-3 py-2"
         >
             <h1 className="flex w-full items-center justify-center gap-1.5 text-xl font-bold">
                 {title}

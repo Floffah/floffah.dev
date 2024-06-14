@@ -12,9 +12,10 @@ module.exports = {
     tailwindFunctions: ["clsx"],
 
     importOrder: [
-        "reflect-metadata",
         "<THIRD_PARTY_MODULES>",
+        "~icons/(.*)$",
         "@/(.*)$",
+        "./(.*)$",
     ],
     importOrderSeparation: true,
     importOrderSortSpecifiers: true,
