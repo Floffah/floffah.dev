@@ -1,27 +1,45 @@
+"use client";
+
+import floffahImage from "../../public/floffah.png";
+import { animated, useTransition } from "@react-spring/web";
 import clsx from "clsx";
+import Image from "next/image";
 
 interface NavbarProps {
-    standalone?: boolean;
-    hideTitle?: boolean;
+    visible?: boolean;
+    showTitle?: boolean;
 }
 
-export function Navbar({ standalone = true, hideTitle = false }: NavbarProps) {
-    return (
-        <div
-            className={clsx(
-                "fixed left-0 top-0 flex w-screen items-center justify-between px-3 transition-[padding,background-color] duration-150",
-                {
-                    "py-4": !standalone && !hideTitle,
-                    "py-2": !standalone && hideTitle,
-                    "bg-black/20 py-2": standalone,
-                },
-            )}
-        >
-            <div className="flex items-center gap-2">
-                {!hideTitle && (
-                    <p className="text-2xl font-semibold">Floffah</p>
-                )}
-            </div>
-        </div>
+export function Navbar({ visible: propsVisible = true }: NavbarProps) {
+    const containerTransition = useTransition(propsVisible, {
+        from: { opacity: 0, translateY: -100 },
+        enter: { opacity: 1, translateY: 0 },
+        leave: { opacity: 0, translateY: -100 },
+        config: {
+            tension: 500,
+            friction: 35,
+        },
+    });
+
+    return containerTransition(
+        (style, visible) =>
+            visible && (
+                <animated.div
+                    style={style}
+                    className={clsx(
+                        "fixed left-0 top-0 flex w-screen items-center justify-between bg-black/20 px-3 py-2 transition-[padding,background-color] duration-150",
+                    )}
+                >
+                    <div className="flex items-center gap-2">
+                        <Image
+                            src={floffahImage}
+                            alt="floffah"
+                            className="h-6 w-6 rounded-md"
+                            placeholder="blur"
+                        />
+                        <p className="text-2xl font-semibold">Floffah</p>
+                    </div>
+                </animated.div>
+            ),
     );
 }

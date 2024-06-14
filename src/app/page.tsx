@@ -33,7 +33,7 @@ const ProjectCard = ({
 export default function RootPage() {
     const headerRef = useRef<HTMLDivElement>(null);
 
-    const [standaloneNavbar, setStandaloneNavbar] = useState(false);
+    const [navbarVisible, setNavbarVisible] = useState(false);
 
     useEffect(() => {
         const scrollHandler = () => {
@@ -42,15 +42,15 @@ export default function RootPage() {
             if (
                 headerBox &&
                 window.scrollY > headerBox.height &&
-                !standaloneNavbar
+                !navbarVisible
             ) {
-                setStandaloneNavbar(true);
+                setNavbarVisible(true);
             } else if (
                 headerBox &&
                 window.scrollY < headerBox.height &&
-                standaloneNavbar
+                navbarVisible
             ) {
-                setStandaloneNavbar(false);
+                setNavbarVisible(false);
             }
         };
 
@@ -59,14 +59,11 @@ export default function RootPage() {
         return () => {
             window.removeEventListener("scroll", scrollHandler);
         };
-    }, [standaloneNavbar]);
+    }, [navbarVisible]);
 
     return (
         <>
-            <Navbar
-                standalone={standaloneNavbar}
-                hideTitle={!standaloneNavbar}
-            />
+            <Navbar visible={navbarVisible} />
             <Header ref={headerRef} />
 
             <div className="flex h-screen w-full flex-col items-center gap-32 pt-36">
