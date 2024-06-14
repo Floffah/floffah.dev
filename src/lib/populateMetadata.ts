@@ -11,6 +11,32 @@ export function populateMetadata(
     override: Metadata = {},
 ): Metadata {
     return {
+        icons: [
+            {
+                url: "/floffah16.png",
+                rel: "icon",
+                type: "image/png",
+                sizes: "16x16",
+            },
+            {
+                url: "/floffah32.png",
+                rel: "icon",
+                type: "image/png",
+                sizes: "32x32",
+            },
+            {
+                url: "/floffah64.png",
+                rel: "icon",
+                type: "image/png",
+                sizes: "64x64",
+            },
+            {
+                url: "/floffah.png",
+                rel: "icon",
+                type: "image/png",
+                sizes: "664x664",
+            },
+        ],
         metadataBase: new URL("https://www.floffah.dev"),
         title,
         description,
